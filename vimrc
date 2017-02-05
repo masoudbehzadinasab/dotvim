@@ -160,11 +160,16 @@ call vundle#end()
 
     nnoremap <C-n> :call NumberToggle()<cr>
 
+    set number
+
     :au FocusLost * :set number
-    :au FocusGained * :set relativenumber
+    :au FocusGained * :set number
+"    :au FocusGained * :set relativenumber
 
     autocmd InsertEnter * :set number
-    autocmd InsertLeave * :set relativenumber
+    autocmd InsertLeave * :set number
+"    autocmd InsertLeave * :set relativenumber
+
 " }
 
 " Formatting {
@@ -304,3 +309,15 @@ au BufEnter *.md  setlocal autoindent
 	endif
 " }
 
+if exists("g:loaded_fix_indentkeys")
+    finish
+endif
+
+" Fix indentation 
+let g:loaded_fix_indentkeys = 1
+
+" Set indentkeys option again on changed filetype option.
+" This fixes TeX \item indentation in combination with YouCompleteMe.
+" See https://github.com/Valloric/YouCompleteMe/issues/1244
+" You may add more filetypes if necessary.
+autocmd FileType tex,plaintex execute "setlocal indentkeys=" . &indentkeys
