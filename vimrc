@@ -37,7 +37,7 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'dantler/vim-alternate'
-Plugin 'altercation/vim-colors-solarized'
+"Plugin 'altercation/vim-colors-solarized'
 Plugin 'Raimondi/delimitMate'
 Plugin 'vim-scripts/Align'
 Plugin 'vim-pandoc/vim-pandoc'
@@ -49,15 +49,16 @@ Plugin 'wincent/command-t'
 Plugin 'ervandew/screen'
 Plugin 'dag/vim-fish'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'drewtempelmeyer/palenight.vim'
 call vundle#end() 
 
 " }
 
 " Powerline {
-    python sys.path.append("/usr/local/lib/python2.7/site-packages/powerline/")
-    python from powerline.vim import setup as powerline_setup
-    python powerline_setup()
-    python del powerline_setup
+    python3 sys.path.append("/usr/local/lib/python3.6/site-packages/powerline/")
+    python3 from powerline.vim import setup as powerline_setup
+    python3 powerline_setup()
+    python3 del powerline_setup
     let g:Powerline_symbols = 'fancy'
 " }
 
@@ -66,7 +67,7 @@ call vundle#end()
 " }
 
 " UltiSnips {
-    let g:UltiSnipsExpandTrigger='<c-f>'
+    "let g:UltiSnipsExpandTrigger='<c-f>'
     let g:UltiSnipsJumpForwardTrigger='<c-f>'
     let g:UltiSnipsJumpBackwardTrigger='<c-d>'
     inoremap <c-x><c-k> <c-x><c-k>
