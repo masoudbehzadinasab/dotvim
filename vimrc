@@ -1,9 +1,10 @@
 " Modeline and Notes {
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker spell:
 "
-" 	This is the personal .vimrc file of John T. Foster
-" 	While much of it is beneficial for general use, I would
-" 	recommend picking out the parts you want and understand.
+" 	This .vimrc file was originally created by John T. Foster.
+" 	It has been modified by Masoud Behzadinasab for his personal use.
+" 	Per John's word, while much of it is beneficial for general use, 
+" 	it is recommended picking out the parts you want and understand.
 "
 " }
 
@@ -50,12 +51,13 @@ Plugin 'ervandew/screen'
 Plugin 'dag/vim-fish'
 Plugin 'rhysd/vim-clang-format'
 Plugin 'drewtempelmeyer/palenight.vim'
+Plugin 'vim-latex/vim-latex'
 call vundle#end() 
 
 " }
 
 " Powerline {
-    python3 sys.path.append("/usr/local/lib/python3.6/site-packages/powerline/")
+    python3 sys.path.append("/home/masoud/.local/lib/python3.6/site-packages/powerline/")
     python3 from powerline.vim import setup as powerline_setup
     python3 powerline_setup()
     python3 del powerline_setup
@@ -94,7 +96,7 @@ call vundle#end()
 	syntax on 					" syntax highlighting
     filetype on
 	filetype plugin indent on  	" Automatically detect file types.
-	set mouse=a					" automatically enable mouse usage
+	set mouse=r					" automatically enable mouse usage
 	set encoding=utf-8
 	set termencoding=utf-8
 	set autowrite                  " automatically write a file when leaving a modified buffer
@@ -120,7 +122,7 @@ call vundle#end()
 " }
 
 " Vim UI {
-	:silent! colorscheme palenight           " load a colorscheme
+	:silent! colorscheme palenight    " load a colorscheme
 	set tabpagemax=15 				" only show 15 tabs
 	set showmode                   	" display the current mode
 
@@ -141,7 +143,7 @@ call vundle#end()
 	set ignorecase 					" case insensitive search
 	set smartcase 					" case sensitive when uc present
 	set wildmenu 					" show list instead of just completing
-	set wildmode=list:longest,full 	" comand <Tab> completion, list matches, then longest common part, then all.
+	set wildmode=list:longest,full 	" command <Tab> completion, list matches, then longest common part, then all.
 	set whichwrap=b,s,h,l,<,>,[,]	" backspace and cursor keys wrap to
 	set scrolljump=5 				" lines to scroll when cursor leaves screen
 	set scrolloff=3 				" minimum lines to keep above and below cursor
@@ -179,9 +181,9 @@ call vundle#end()
 	set formatoptions=qrn1
 	set colorcolumn=80              " creates a color column at column 80
 	set autoindent                 	" indent at the same level of the previous line
-	set shiftwidth=4               	" use indents of 4 spaces
-	set expandtab   	       		" tabs are  spaces
-	set tabstop=4 					" an indentation every four columns
+	set shiftwidth=2               	" use indents of 2 spaces
+	set expandtab   	       		    " tabs are  spaces
+	set tabstop=2 					        " an indentation every two columns
 	set matchpairs+=<:>            	" match, to be used with % 
 	set pastetoggle=<F12>          	" pastetoggle (sane indentation on pastes)
 	set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
